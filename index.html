@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Верхньоріченський ліцей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e6e9f0, #ecf0f1);
+        }
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #2c3e50;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #1abc9c;
+        }
+        .content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .tabs {
+            margin-top: 10px;
+        }
+        .tabs button {
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tabs button.active, .tabs button:hover {
+            background-color: #1abc9c;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Верхньоріченський ліцей</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">ГОЛОВНА</a></li>
+            <li><a href="#about">ПРО НАС</a></li>
+            <li><a href="#structure">СТРУКТУРА</a></li>
+            <li><a href="#students">УЧНЯМ</a></li>
+            <li><a href="#public">ПУБЛІЧНА ІНФОРМАЦІЯ</a></li>
+            <li><a href="#teachers">ВЧИТЕЛЯМ</a></li>
+            <li><a href="#attestation">АТЕСТАЦІЯ</a></li>
+            <li><a href="#news-archive">АРХІВ НОВИН</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="content">
+            <h2>Вітаємо Вас на сайті</h2>
+            <p>Тут ви знайдете всю необхідну інформацію про наш ліцей.</p>
+        </section>
+        <section id="about" class="content">
+            <h2>Про нас</h2>
+            <p>Верхньоріченський ліцей - це освітній заклад з багаторічною історією та високими стандартами навчання.</p>
+        </section>
+        <section id="structure" class="content">
+            <h2>Структура</h2>
+            <div class="tabs">
+                <button class="tab-link active" data-tab="teachers">Вчителі</button>
+                <button class="tab-link" data-tab="class-leaders">Класні керівники</button>
+                <button class="tab-link" data-tab="tech-staff">Тех. працівники</button>
+            </div>
+            <div id="teachers" class="tab-content active">
+                <h3>Вчителі</h3>
+                <p>Дмитро Струк</p>
+                <p>Дуду Гепа</p>
+            </div>
+            <div id="class-leaders" class="tab-content">
+                <h3>Класні керівники</h3>
+                <p>Інформація про класних керівників.</p>
+            </div>
+            <div id="tech-staff" class="tab-content">
+                <h3>Технічні працівники</h3>
+                <p>Інформація про технічний персонал.</p>
+            </div>
+        </section>
+        <section id="students" class="content">
+            <h2>Учням</h2>
+            <p>Інформація для учнів, розклад занять, гуртки та інше.</p>
+        </section>
+        <section id="public" class="content">
+            <h2>Публічна інформація</h2>
+            <p>Відкриті дані щодо діяльності ліцею, фінансування, та ін.</p>
+        </section>
+        <section id="teachers" class="content">
+            <h2>Вчителям</h2>
+            <p>Ресурси, методичні матеріали та інформація для викладачів.</p>
+        </section>
+        <section id="attestation" class="content">
+            <h2>Атестація</h2>
+            <p>Інформація про атестацію учнів та вчителів.</p>
+        </section>
+        <section id="news-archive" class="content">
+            <h2>Архів новин</h2>
+            <p>Огляд останніх подій та новин ліцею.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Верхньоріченський ліцей. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
